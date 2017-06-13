@@ -3,19 +3,21 @@ var models = require('../models');
 module.exports = {
   messages: {
     get: function (req, res) {
-      console.log('IM GETTING IN THE CONTROLLER!');
-      res.end(models.messages.get());
+      models.messages.get(res);
     }, // a function which handles a get request for all messages
     post: function (req, res) {
-      console.log('IM POSTING IN THE CONTROLLER!');
-      res.end(models.messages.post({ username: 'jennifer', roomname: 'lobby', message: 'i am a butt' }));
+      models.messages.post(req.body, res);
     } // a function which handles posting a message to the database
   },
 
   users: {
     // Ditto as above
-    get: function (req, res) {},
-    post: function (req, res) {}
+    get: function (req, res) {
+      models.users.get(res);
+    },
+    post: function (req, res) {
+      models.users.post(req.body, res);
+    }
   }
 };
 
