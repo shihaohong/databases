@@ -3,7 +3,7 @@
 
 var request = require('request');
 var mongoClient = require('mongodb').MongoClient;
-var expect = require('chai').expect;
+var expect = require('jasmine').expect;
 
 describe('Persistent Node Chat Server', function() {
   // TODO edit this line if your database name is not "archive":
